@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    ## 定义一个 dayOfYear 函数，接受一个字符串时间，返回一个 number 来表示是该日期年中第几天。
+
+```js
+dayOfYear("2010-01-01"); // 1 表示该日期是2010年的第一天
+```
+</body>
+<script>
+    console.log(dayOfYear('2010-10-1'));
+    function dayOfYear(d) {
+        var date=new Date(d);
+        var month = date.getMonth();
+        // var cont=0
+        // console.log(month);
+        // console.log(Date.getMonth());
+        var cont=0
+        for(var i=1;i<=month;i++){
+            if(i===1 || i===3 || i===5 ||i===7 || i===8 || i===10 || i===12){
+                cont++;
+            }
+            if (i===2) {
+                cont-=2;
+            }
+        }
+        return date.getDate()+date.getMonth()*30+cont;
+        
+    }
+</script>
+</html>

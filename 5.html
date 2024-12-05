@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    ## 定义一个函数 weekOfYear 返回参数年份中有多少个星期。
+
+```js
+weekOfYear("2024/12/1"); // 53
+```
+</body>
+<script>
+    weekOfYear("2024/12/1")
+    // console.log(weekOfYear("2024/12/1"));
+    
+    function weekOfYear(t){
+        var date=new Date(t);
+        var day=date.getDate()  
+        var t = new Date(date.getFullYear(), 0, 1);
+        var b = new Date(date.getFullYear(), 11, 31);
+        var first=t.getDay();
+        var last=b.getDay();
+        console.log(first,last);
+        if (first+last<=7) {
+            return 53;
+        }else return 54;
+    }
+</script>
+</html>

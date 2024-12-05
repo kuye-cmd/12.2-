@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ## 1.【时间增加】返回增加一定时间的时间,各个传入的单位对大小写不敏感，支持缩写和复数。 请注意，缩写是区分大小写的。
+
+支持的单位列表：
+单位 描述
+day 日
+week 周
+hour 小时
+minute 分钟
+second 秒
+millisecond 毫秒
+
+```js
+add(7, "day"); // 不传第三个参数默认为当前时刻
+add(7, "day", "2024/10/8 12:00:23");
+add(18, "week", "2024/10/8 12:00:23");
+``` -->
+</body>
+<script>
+    console.log(add(7,'day'));
+     
+    function add(time, unit, date) {
+        var inputDate = new Date(date);
+        console.log(inputDate.getTime());
+        
+        if (isNaN(inputDate.getTime())) {
+            inputDate = new Date();
+        }
+        console.log(inputDate);
+        
+         switch (unit.toLowerCase()) {
+             case "day": inputDate.setDate(inputDate.getDate()+time);break;
+             case "week": inputDate.setDate(inputDate.getDate()+time*7);break;
+             case "hover": inputDate.setDate(inputDate.gethover()+time);break;
+             case "minute": inputDate.setDate(inputDate.getMinutes()+time);break;
+             case "second": inputDate.setDate(inputDate.getSeconds()+time);break;
+             default: throw new Error("没有 " + unit);
+         }
+        console.log(inputDate);
+        console.log(inputDate.toDateString());
+        return inputDate.toLocaleString()
+        }
+</script>
+</html>

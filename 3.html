@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    ## 定义一个 isBetween 函数 返回一个 boolean 来展示一个时间是否介于两个时间之间。
+
+```js
+isBetween("2010-10-20", "2010-10-19", "2010-10-25"); // true
+// 判断2010-10-20是不是在2010-10-19和2010-10-25之间
+```
+</body>
+<script>
+    console.log(isBetween("2010-10-19", "2010-10-19", "2010-10-25"));
+    
+    function isBetween(a,b,c){
+        var date1=new Date(a)
+        var date2=new Date(b)
+        var date3=new Date(c)
+        var d=Math.abs(date1.getTime()-date3.getTime());
+        console.log(d/(24*60*60*1000));
+        if ((date1<=date2 && date1>=date3)  || date1>=date2 && date1<=date3) {
+            return true
+        }else return false
+    }
+</script>
+</html>
